@@ -28,7 +28,9 @@
             </p>
             
             <input type="submit" value="Cadastrar"  />
-            <p>$(erro)</p>
+            <p>${erroJaCadastrado}</p>
+            <p>${erroSenha}</p>
+            
         </form>
     </body>
 </html>

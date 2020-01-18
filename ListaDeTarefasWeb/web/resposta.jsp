@@ -12,8 +12,9 @@
         <title>Resposta</title>
     </head>
     <body>
-        <h1>Resposta</h1>
-        <p>Email: ${email}</p>
-        <p>Senha: ${senha}</p>
+        <h1>Erro</h1>
+        ${erroSenha}
+<!--        <p>Email: ${email}</p>
+        <p>Senha: ${senha}</p>-->
     </body>
 </html>

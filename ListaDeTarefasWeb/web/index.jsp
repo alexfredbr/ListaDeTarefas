@@ -1,7 +1,11 @@
-<!DOCTYPE html>
-<!--
+<%-- 
+    Document   : index
+    Created on : 18/01/2020, 09:51:18
+    Author     : Aluno
+--%>
 
--->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Lista de Tarefas</title>
@@ -21,7 +25,13 @@
                 <input type="password" name="senha"/>
             </p>
             
-            <input type="submit" />
+            <input type="submit" value="Fazer login" />
+            
+            <p>${NoUser}</p>
+            <p>${WrongPassword}</p>
+            
+            <a href ="cadastro.jsp"> Cadastrar novo usuário</a>
+            
         </form>
     </body>
 </html>

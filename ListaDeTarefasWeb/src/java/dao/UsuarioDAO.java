@@ -21,11 +21,11 @@ public class UsuarioDAO {
 
             int up = stmt.executeUpdate();
 
-            if (up > 0) {
-                System.out.println("Usuario cadastrado com sucesso");
-            } else {
-                System.out.println("Algo deu errado");
-            }
+//            if (up > 0) {
+//                System.out.println("Usuario cadastrado com sucesso");
+//            } else {
+//                System.out.println("Algo deu errado");
+//            }
 //            System.out.println("pressione enter para continuar");
 //            Scanner scan = new Scanner(System.in);
 //            scan.nextLine();
@@ -60,11 +60,11 @@ public class UsuarioDAO {
 
             int up = stmt.executeUpdate();
 
-            if (up > 0) {
-                System.out.println("Atualização concluida com sucesso!");
-            } else {
-                System.out.println("Algo deu errado!");
-            }
+//            if (up > 0) {
+//                System.out.println("Atualização concluida com sucesso!");
+//            } else {
+//                System.out.println("Algo deu errado!");
+//            }
 
 
             
@@ -83,11 +83,11 @@ public class UsuarioDAO {
 
             int up = stmt.executeUpdate();
 
-            if (up > 0) {
-                System.out.println("Usuario deletado com sucesso!");
-            } else {
-                System.out.println("Algo deu errado!");
-            }
+//            if (up > 0) {
+//                System.out.println("Usuario deletado com sucesso!");
+//            } else {
+//                System.out.println("Algo deu errado!");
+//            }
 
 
         } catch (SQLException e) {
