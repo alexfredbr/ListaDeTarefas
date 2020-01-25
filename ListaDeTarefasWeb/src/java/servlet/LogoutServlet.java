@@ -22,8 +22,8 @@ public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         //Encerra sessão, volta pro index
-        HttpSession sessão = request.getSession();
-        sessão.invalidate();
+        HttpSession sessao = request.getSession();
+        sessao.invalidate();
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
         

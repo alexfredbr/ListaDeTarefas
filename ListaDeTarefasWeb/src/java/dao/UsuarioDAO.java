@@ -38,41 +38,29 @@ public class UsuarioDAO {
 
     }
     
-    public static void atualizarUsuario(Usuario u) {
+    public static int atualizarUsuario(Usuario u, String email, String senha) {
+        if(u.getEmail().equals(email) || checarUsuarioPorEmail(email)== null){
         try (Connection conexao = Conexao.abrirConexao();PreparedStatement stmt = conexao.prepareStatement("Update cadastro.usuario SET email = ?, senha =? WHERE id = ? ");){
             Driver driver = new Driver();
-            DriverManager.registerDriver(driver);
-                
-            
-//            depois alterar o metódo de aquisição da nova senha e email, pelo preenchimento de forms de HTML.
-            
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Digite o novo email");
-            String email = scan.nextLine();
-            System.out.println("Digite a nova senha");
-            String senha = scan.nextLine();
+            DriverManager.registerDriver(driver);       
 
             
-
             stmt.setString(1, email);
             stmt.setString(2, senha);
             stmt.setInt(3, u.getId());
 
             int up = stmt.executeUpdate();
-
-//            if (up > 0) {
-//                System.out.println("Atualização concluida com sucesso!");
-//            } else {
-//                System.out.println("Algo deu errado!");
-//            }
-
-
-            
+            return up;
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return 0; // problema na atualização
+        }else
+        return -1; // Outro usuário tem o email registrado
     }
+        
+    
     
     public static void deletarUsuario(Usuario u) {
         try (Connection conexao = Conexao.abrirConexao();PreparedStatement stmt = conexao.prepareStatement("DELETE FROM cadastro.usuario WHERE email = ?");

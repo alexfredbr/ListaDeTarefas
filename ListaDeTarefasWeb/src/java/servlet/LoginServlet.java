@@ -40,8 +40,8 @@ public class LoginServlet extends HttpServlet {
             //Usuário existe!
             //Agora precisamos verificar a senha
             if(u.getSenha().equals(senha)) {
-                HttpSession sessão = request.getSession();
-                sessão.setAttribute("Usuario", u);
+                HttpSession sessao = request.getSession();
+                sessao.setAttribute("Usuario", u);
                 RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
                 rd.forward(request, response);
             }else{

@@ -19,6 +19,7 @@ import java.util.Scanner;
  */
 public class Tarefa {
 
+    private int id;
     private String titulo;
     private boolean finalizada = false;
 
@@ -36,6 +37,14 @@ public class Tarefa {
 
     public void setFinalizada(boolean finalizada) {
         this.finalizada = finalizada;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     

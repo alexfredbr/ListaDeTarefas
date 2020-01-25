@@ -41,8 +41,8 @@ public class CadastroServlet extends HttpServlet {
         }else if(UsuarioDAO.checarUsuarioPorEmail(email)==(null)){
         
             UsuarioDAO.inserirUsuario(u);
-            HttpSession sessão = request.getSession();
-            sessão.setAttribute("Usuario", u);
+            HttpSession sessao = request.getSession();
+            sessao.setAttribute("Usuario", u);
             
             RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
             rd.forward(request, response);

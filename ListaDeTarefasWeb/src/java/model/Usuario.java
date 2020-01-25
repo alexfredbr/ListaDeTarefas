@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package model;
-import java.util.ArrayList;
 
 /**
  *
@@ -21,8 +20,6 @@ public class Usuario {
     public void setId(int id) {
         this.id = id;
     }
-    
-    ArrayList<Tarefa> listaTarefas = new ArrayList ();
 
     public String getEmail() {
         return email;
