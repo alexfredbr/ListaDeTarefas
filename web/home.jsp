@@ -22,7 +22,7 @@
         </form>
         <!--Listar Todas as tarefas-->
 
-        <form method="POST" action="finalizar" style="visibility:hidden" id="finaliza">
+        <form method="POST"  style="visibility:hidden" id="tarefasListadas">
         <c:forEach items="${listado}" var="tarefa">
             <p>
                 <input type="checkbox" name="tarefas" value="${tarefa.id}"/>
@@ -31,7 +31,8 @@
                 
             </p>
         </c:forEach>
-            <input type="submit" value ="finalizar tarefa"/>
+            <button onclick="finalizar();"> finalizar tarefa </button>
+            <button onclick="remover();"> remover tarefa </button>
             <br>
         </form>
 
@@ -105,13 +106,24 @@
                     adicionar.style["display"] = "none";
                 }
             }
-
-            var form = document.getElementById("form");
-            var acao = document.getElementById("acao");
+            
+            function finalizar(){
+                var fin = document.getElementById("tarefasListadas");
+                fin.action = "finalizar";
+                fin.submit();
+            }
+            function remover(){
+                var rem = document.getElementById("tarefasListadas");
+                rem.action = "remover";
+                rem.submit();
+            }
+            
+//            var form = document.getElementById("form");
+//            var acao = document.getElementById("acao");
             
             <c:if test="${listado != null}">
-                var fin = document.getElementById("finaliza");
-                fin.style["visibility"] = "visible";
+                var lis = document.getElementById("tarefasListadas");
+               lis.style["visibility"] = "visible";
                 
             </c:if>
         </script>

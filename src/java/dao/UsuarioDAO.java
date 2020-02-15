@@ -7,7 +7,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
 import model.Usuario;
 
 
@@ -19,17 +18,7 @@ public class UsuarioDAO {
             stmt.setString(1, u.getEmail());
             stmt.setString(2, u.getSenha());
 
-            int up = stmt.executeUpdate();
-
-//            if (up > 0) {
-//                System.out.println("Usuario cadastrado com sucesso");
-//            } else {
-//                System.out.println("Algo deu errado");
-//            }
-//            System.out.println("pressione enter para continuar");
-//            Scanner scan = new Scanner(System.in);
-//            scan.nextLine();
-            
+            int up = stmt.executeUpdate();  
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -70,13 +59,6 @@ public class UsuarioDAO {
             stmt.setString(1, u.getEmail());
 
             int up = stmt.executeUpdate();
-
-//            if (up > 0) {
-//                System.out.println("Usuario deletado com sucesso!");
-//            } else {
-//                System.out.println("Algo deu errado!");
-//            }
-
 
         } catch (SQLException e) {
             e.printStackTrace();

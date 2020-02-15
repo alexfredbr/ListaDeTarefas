@@ -18,30 +18,36 @@ import model.Tarefa;
 import model.Usuario;
 
 
-@WebServlet(name="FinalizarServlet", urlPatterns={"/finalizar"})
-public class FinalizarServlet extends HttpServlet {
+@WebServlet(name="RemoverServlet", urlPatterns={"/remover"})
+public class RemoverServlet extends HttpServlet {
+   
+    
+    
 
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         
     } 
+
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        
+        //pega os vários valores que foram marcados com o checkbox
         String[] idTarefas = request.getParameterValues("tarefas");
         HttpSession sessao= request.getSession();
         Usuario usuarioLogado = (Usuario)sessao.getAttribute("Usuario");
         
-        /*para cada tarefa, o for guarda a atual na variável t*/
         for (String t : idTarefas) {
             int id = Integer.parseInt(t);
             
-            //novo espaço da memória pra determinar os dados da tarefa que será finalizada
+            //novo espaço da memória pra determinar os dados da tarefa que será deletada
             Tarefa tarefa = new Tarefa();
             tarefa.setId(id);
-            TarefaDAO.finalizarTarefa(usuarioLogado, id);
+            TarefaDAO.removerTarefa(usuarioLogado, id);
         }
         
         response.sendRedirect("home.jsp");
